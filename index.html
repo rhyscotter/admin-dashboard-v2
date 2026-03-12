@@ -267,6 +267,24 @@
             <div class="sub" id="meta">—</div>
           </div>
         </div>
+
+        <!-- ✅ ADDED BUTTON ONLY -->
+        <div class="row" style="margin-top:18px;">
+          <button id="adminOfficeBtn" style="
+            border:none;
+            border-radius:999px;
+            padding:12px 16px;
+            font-weight:900;
+            font-size:12px;
+            letter-spacing:.8px;
+            text-transform:uppercase;
+            cursor:pointer;
+            color:#fff;
+            background:rgba(255,255,255,.05);
+            border:1px solid rgba(255,255,255,.14);
+            box-shadow:0 0 0 1px rgba(255,255,255,.03), 0 0 24px var(--clubGlow);
+          ">Admin Office</button>
+        </div>
       </div>
     </div>
 
@@ -365,6 +383,11 @@ window.addEventListener("message",(e)=>{
     render();
     return;
   }
+});
+
+/* ✅ ADDED BUTTON HANDLER ONLY */
+document.getElementById("adminOfficeBtn").addEventListener("click", () => {
+  window.parent.postMessage({ type: "OPEN_ADMIN_OFFICE" }, "*");
 });
 
 post("IFRAME_READY",{});
